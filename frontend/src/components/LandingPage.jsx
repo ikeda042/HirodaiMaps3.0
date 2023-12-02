@@ -5,7 +5,6 @@ import React from 'react';
 
 function LandingPage(props) {
   return (
-
     <div className="App">
       <ButtonAppBar headerText={props.headerText}/>
       <SearchBar />
