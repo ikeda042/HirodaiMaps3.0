@@ -34,6 +34,35 @@ const buildings = [
       imageUrl: 'building_images/building5.png',
       keywords: ['文学部', '文学部棟', '文学部講義室', 'ぶんがくぶ'],
     },
+    {
+      buildingId: '6',
+      title: '学部１',
+      description: '文学部の講義室がある棟です。',
+      imageUrl: 'building_images/building1.png',
+      keywords: ["1"],
+    },
+    {
+      buildingId: '7',
+      title: '学部2',
+      description: '文学部の講義室がある棟です。',
+      imageUrl: 'building_images/building3.png',
+      keywords: [""],
+    },
+    {
+      buildingId: '8',
+      title: '学部A',
+      description: '文学部の講義室がある棟です。',
+      imageUrl: 'building_images/building2.png',
+      keywords: [""],
+    },
+    {
+      buildingId: '9',
+      title: '学部B',
+      description: '文学部の講義室がある棟です。',
+      imageUrl: 'building_images/building4.png',
+      keywords: ["B"],
+    },
+
   ];
 
 export default buildings;
