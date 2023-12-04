@@ -11,7 +11,7 @@ function BuildingCard({ title, description, imageUrl, buildingId}) {// 例: 'bui
   return (
     <Link to={`/building/${buildingId}`} style={{ textDecoration: 'none',color: 'inherit', fontFamily: 'Arial'}}>
        <div style={{ margin: '0 1%' }}> {/* 左右のマージンを1%に設定 */}
-      <Card sx={{ width: '100%', display: 'flex',  margin: '0.1% auto'  }}>
+      <Card sx={{ width: '100%', display: 'flex',  margin: '0.5% auto', borderRadius: "10px" }}>
         <CardMedia
            component="img"
            sx={{ width: 100, height: 100, padding: '2%', borderRadius: '15px' }}
