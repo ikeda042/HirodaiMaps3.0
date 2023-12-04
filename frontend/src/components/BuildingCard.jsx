@@ -14,7 +14,7 @@ function BuildingCard({ title, description, imageUrl, buildingId}) {// 例: 'bui
       <Card sx={{ width: '100%', display: 'flex',  margin: '0.1% auto'  }}>
         <CardMedia
            component="img"
-           sx={{ width: 100, height: 100, padding: '2%' }}
+           sx={{ width: 100, height: 100, padding: '2%', borderRadius: '15px' }}
            image={imageUrl}
            alt="Building Image"
         />
