@@ -47,7 +47,7 @@ function BuildingDetail({ detailData }) {
         title="Map"
       ></iframe>
     </div>
-    <BottomNav />
+    {/* <BottomNav /> */}
   </div>
   );
 }

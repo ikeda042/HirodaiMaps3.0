@@ -34,7 +34,7 @@ function LandingPage(props) {
           imageUrl={building.imageUrl}
         />
       ))}
-      <BottomNav />
+      {/* <BottomNav /> */}
     </div>
   );
 }
