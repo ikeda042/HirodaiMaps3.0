@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 
-function BuildingCard({ title, description, imageUrl, buildingId}) {// 例: 'building1.png' => '1'
+function BuildingCard({ title, description, imageUrl, buildingId}) {
 
   return (
     <Link to={`/building/${buildingId}`} style={{ textDecoration: 'none',color: 'inherit', fontFamily: 'Arial'}}>
@@ -26,7 +26,7 @@ function BuildingCard({ title, description, imageUrl, buildingId}) {// 例: 'bui
           sx={{
             display: 'flex',
             alignItems: 'center',
-            height: '100%' // Ensure the container takes the full height
+            height: '100%' 
           }}
         >
           {title}
