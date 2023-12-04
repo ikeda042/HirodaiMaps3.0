@@ -40,7 +40,6 @@ function LandingPage(props) {
   ];
 
   useEffect(() => {
-    // ここで buildings は全ての建物のデータを含む配列です
     const filtered = buildings.filter(building =>
       building.title.includes(searchQuery)
     );
