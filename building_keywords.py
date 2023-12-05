@@ -13,7 +13,7 @@ with open("hiroshima university building names.csv") as f:
 
 import random 
 import json
-
+import random
 for n,building in enumerate(lines):
     data_i = {
       'buildingId': f'{n+1}',
@@ -21,6 +21,7 @@ for n,building in enumerate(lines):
       'description': f'{building[1]}です。',
       'imageUrl': f'building_images/building{str(random.choice([1,2,3,4,5]))}.png',
       'keywords': [f'{building[1]}',f'{building[0]}',],
-      'tag': "faculty"
+      'tag': "faculty",
+      'mapCoordinate': f"#17/{round(34.40500+random.random()/1000,6)}/{round(132.71249+random.random()/1000,6)}"
     }
     print(data_i,',')
