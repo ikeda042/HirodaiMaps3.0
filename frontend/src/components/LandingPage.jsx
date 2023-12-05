@@ -4,6 +4,7 @@ import BuildingCard from "./BuildingCard";
 import BottomNav from "./BottomNavigation ";
 import React, { useState, useEffect } from 'react';
 import buildings from './buildingsData';
+
 function LandingPage(props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredBuildings, setFilteredBuildings] = useState([]);
@@ -11,6 +12,7 @@ function LandingPage(props) {
 
   useEffect(() => {
     const filtered = buildings.filter(building =>
+      building.tag === "faculty" && 
       building.keywords.some(keyword => 
         keyword.toLowerCase().includes(searchQuery.toLowerCase())
       )
