@@ -26,21 +26,31 @@ function LandingPage(props) {
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
+
+  const appBarHeight = '55px'; 
+  const searchBarHeight = '70px';
+
   return (
     <div className="App">
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
         <ButtonAppBar headerText={props.headerText}/>
-      <SearchBar onSearch={handleSearch} />
-      {filteredBuildings.map(building => (
-        <BuildingCard
-          key={building.buildingId}
-          buildingId={building.buildingId}
-          title={building.title}
-          description={building.description}
-          imageUrl={building.imageUrl}
-        />
-      ))}
+      </div>
+      <div style={{ position: 'fixed', top: appBarHeight, left: 0, right: 0, zIndex: 99, backgroundColor: 'white', }}>
+        <SearchBar onSearch={handleSearch} />
+      </div>
+      <div style={{ marginTop: `calc(${appBarHeight} + ${searchBarHeight})` }}>
+        {filteredBuildings.map(building => (
+          <BuildingCard
+            key={building.buildingId}
+            buildingId={building.buildingId}
+            title={building.title}
+            description={building.description}
+            imageUrl={building.imageUrl}
+          />
+        ))}
       {/* <BottomNav /> */}
     </div>
+  </div>
   );
 }
 

@@ -22,6 +22,6 @@ for n,building in enumerate(lines):
       'imageUrl': f'building_images/building{str(random.choice([1,2,3,4,5]))}.png',
       'keywords': [f'{building[1]}',f'{building[0]}',],
       'tag': "faculty",
-      'mapCoordinate': f"#17/{round(34.40500+random.random()/1000,6)}/{round(132.71249+random.random()/1000,6)}"
+      'mapCoordinate': f"#17/{round(34.40286+random.random()/500,6)}/{round(132.71338+random.random()/500,6)}"
     }
     print(data_i,',')

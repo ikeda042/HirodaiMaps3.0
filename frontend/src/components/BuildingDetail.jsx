@@ -20,8 +20,10 @@ function BuildingDetail({ detailData }) {
 
   return (
     <div>
-    <ButtonAppBar />
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2%' }}>
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
+        <ButtonAppBar />
+      </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '17%' }}>
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
@@ -43,7 +45,7 @@ function BuildingDetail({ detailData }) {
       <iframe
         id="mapIframe"
         src={"/map/map.html"+buildingDetail.mapCoordinate}
-        style={{ height: '300px', width: '300px', border: '2px solid black', marginTop: '20px' }} // 枠とマージンを追加
+        style={{ height: '300px', width: '300px', border: '2px solid black', marginTop: '20px', marginBottom: '50px' }} // 枠とマージンを追加
         title="Map"
       ></iframe>
     </div>
