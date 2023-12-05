@@ -4,6 +4,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useState } from 'react';
+
 function SearchBar({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
 

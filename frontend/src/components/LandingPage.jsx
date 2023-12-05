@@ -8,7 +8,7 @@ import buildings from './buildingsData';
 function LandingPage(props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredBuildings, setFilteredBuildings] = useState([]);
-
+  
   useEffect(() => {
     let filtered;
     if (searchQuery) {
