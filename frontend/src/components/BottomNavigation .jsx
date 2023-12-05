@@ -7,9 +7,16 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { styled } from '@mui/material/styles';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { Link } from 'react-router-dom';
-// スタイルのカスタマイズ
-const StyledBottomNavigationAction = styled(BottomNavigationAction)(({ theme }) => ({
-  borderRight: '1px solid rgba(0, 0, 0, 0.12)', // 右側に境界線を追加
+import AccessibleIcon from '@mui/icons-material/Accessible';
+
+
+const CustomBottomNavigationAction = styled(BottomNavigationAction)(({ theme }) => ({
+  borderRight: '1px solid rgba(0, 0, 0, 0.12)',
+  borderLeft: '1px solid rgba(0, 0, 0, 0.12)', 
+  '&.Mui-selected': {
+    color: '#005e3c', 
+    backgroundColor: '#f0f0f0', 
+  }
 }));
 
 function BottomNav() {
@@ -22,11 +29,16 @@ function BottomNav() {
         setValue(newValue);
       }}
       showLabels
-      style={{ width: '100%', position: 'fixed', bottom: 0 }}
+      style={{ 
+        width: '100%', 
+        position: 'fixed', 
+        bottom: 0,
+        borderTop: '1px solid rgba(0, 0, 0, 0.12)',
+      }}
     >
-        <BottomNavigationAction label="ホーム" icon={<HomeIcon />} />
-      <StyledBottomNavigationAction label="検索" icon={<SearchIcon />} />
-      <BottomNavigationAction label="言語" icon={<TranslateIcon />} />
+        <CustomBottomNavigationAction label="ホーム" icon={<HomeIcon />}/>
+      <CustomBottomNavigationAction label="バリアフリー" icon={<AccessibleIcon />} />
+      <CustomBottomNavigationAction label="言語/Langage" icon={<TranslateIcon />} />
     </BottomNavigation>
   );
 }

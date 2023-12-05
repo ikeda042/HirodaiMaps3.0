@@ -38,7 +38,7 @@ function LandingPage(props) {
       <div style={{ position: 'fixed', top: appBarHeight, left: 0, right: 0, zIndex: 99, backgroundColor: 'white', }}>
         <SearchBar onSearch={handleSearch} />
       </div>
-      <div style={{ marginTop: `calc(${appBarHeight} + ${searchBarHeight})` }}>
+      <div style={{ marginTop: `calc(${appBarHeight} + ${searchBarHeight})`, marginBottom:"60px" }}>
         {filteredBuildings.map(building => (
           <BuildingCard
             key={building.buildingId}
@@ -48,7 +48,9 @@ function LandingPage(props) {
             imageUrl={building.imageUrl}
           />
         ))}
-      {/* <BottomNav /> */}
+      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 1000}}> {/* ここでBottomNavを固定 */}
+      <BottomNav />
+    </div>
     </div>
   </div>
   );

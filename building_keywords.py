@@ -10,10 +10,15 @@ data_tmp = {
 with open("hiroshima university building names.csv") as f:
     lines = [[i.strip() for i in i.split(",")] for i in f.readlines()]
 
+with open("buildingsfordemo.txt") as f:
+    lines = [[i.strip() for i in i.split(",")] for i in f.readlines()[:-1]]
+
 
 import random 
 import json
 import random
+
+print(lines)
 for n,building in enumerate(lines):
     data_i = {
       'buildingId': f'{n+1}',
