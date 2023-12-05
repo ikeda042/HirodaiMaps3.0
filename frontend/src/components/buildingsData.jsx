@@ -5,7 +5,7 @@ const buildings = [
       description: '総合科学部の講義室がある棟です。',
       imageUrl: 'building_images/building1.png',
       keywords: ['総合科学部', '総合科学部棟', '総合科学部講義室','そうかとう',"L102"],
-      tag: "faculty"
+      tag: "faculty1"
     },
     {
       buildingId: '2',
@@ -13,7 +13,7 @@ const buildings = [
       description: '工学部第３類の講義室、研究室がある棟です。',
       imageUrl: 'building_images/building2.png',
       keywords: ['工学部', '工学部第3類', '工学部第3類A4棟', '工学部講義室'],
-      tag: "faculty"
+      tag: "faculty1"
     },
     {
       buildingId: '3',
@@ -21,7 +21,7 @@ const buildings = [
       description: '統合生命科学研究科の講義室、研究室がある棟です。',
       imageUrl: 'building_images/building3.png',
       keywords: ['統合生命科学研究科', '先端物質科学研究科', '先端物質科学研究科講義室'],
-      tag: "faculty"
+      tag: "faculty1"
     },
     {
       buildingId: '4',
@@ -29,7 +29,7 @@ const buildings = [
       description: '教育学部の講義室がある棟です。',
       imageUrl: 'building_images/building4.png',
       keywords: ['教育学部', '教育学部K棟', '教育学部講義室'],
-      tag: "faculty"
+      tag: "faculty1"
     },
     {
       buildingId: '5',
@@ -37,7 +37,7 @@ const buildings = [
       description: '文学部の講義室がある棟です。',
       imageUrl: 'building_images/building5.png',
       keywords: ['文学部', '文学部棟', '文学部講義室', 'ぶんがくぶ'],
-      tag: "faculty"
+      tag: "faculty1"
     },
     {
       buildingId: '6',

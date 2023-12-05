@@ -11,15 +11,19 @@ function LandingPage(props) {
   
 
   useEffect(() => {
-    const filtered = buildings.filter(building =>
-      building.tag === "faculty" && 
-      building.keywords.some(keyword => 
-        keyword.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    );
+    let filtered;
+    if (searchQuery) {
+      filtered = buildings.filter(building =>
+        building.keywords.some(keyword => 
+          keyword.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+    } else {
+      filtered = buildings.filter(building => building.tag === "faculty");
+    }
     setFilteredBuildings(filtered);
-  }, [searchQuery]);
-
+  }, [searchQuery]); 
+  
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
