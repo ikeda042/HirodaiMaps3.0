@@ -27,20 +27,20 @@ function BottomNav(props) {
   
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    switch(newValue) {
-      case "home":
-        navigate('/'+`?qrid=${props.QRID}`); 
-        break;
-      case "accessibility":
-        navigate('/accessibilitymenu/'+`?qrid=${props.QRID}`); 
-        break;
-      case "language":
-        navigate('/building1/'+`?qrid=${props.QRID}`); 
-        break;
-      default:
-        navigate('/'+`?qrid=${props.QRID}`); 
-        break;
-    }
+    // switch(newValue) {
+    //   case "home":
+    //     navigate('/'+`?qrid=${props.QRID}`); 
+    //     break;
+    //   case "accessibility":
+    //     navigate('/accessibilitymenu/'+`?qrid=${props.QRID}`); 
+    //     break;
+    //   case "language":
+    //     navigate('/building1/'+`?qrid=${props.QRID}`); 
+    //     break;
+    //   default:
+    //     navigate('/'+`?qrid=${props.QRID}`); 
+    //     break;
+    // }
   };
 
   return (
