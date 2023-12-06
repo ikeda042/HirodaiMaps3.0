@@ -17,7 +17,8 @@ function LandingPage(props) {
  
   const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
   const QRID = getQridFromQueryParam("qrid");
-
+  const checkpointID = QRID ? QRID : "0";
+  
   useEffect(() => {
     let filtered;
     if (searchQuery) {
@@ -31,8 +32,8 @@ function LandingPage(props) {
     }
     setFilteredBuildings(filtered);
   }, [searchQuery]); 
-  const checkpointID = QRID ? QRID : "0";
-  
+
+ 
   return (
     <div className="App">
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
