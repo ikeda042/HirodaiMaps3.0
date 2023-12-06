@@ -24,7 +24,7 @@ function BuildingDetail({ detailData }) {
   return (
     <div>
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
-      <ButtonAppBar />
+      <ButtonAppBar headerText={detailData.headerText} checkpointID={checkpointID}/>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '17%' }}>
       <Card sx={{ maxWidth: 345 }}>
