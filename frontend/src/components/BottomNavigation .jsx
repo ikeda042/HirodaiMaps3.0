@@ -27,6 +27,20 @@ function BottomNav(props) {
   
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    switch(newValue) {
+      case "home":
+        navigate('/'+`?qrid=${props.QRID}`); 
+        break;
+      case "accessibility":
+        navigate('/accessibilitymenu/'+`?qrid=${props.QRID}`); 
+        break;
+      case "language":
+        navigate('/building1/'+`?qrid=${props.QRID}`); 
+        break;
+      default:
+        navigate('/'+`?qrid=${props.QRID}`); 
+        break;
+    }
   };
 
   return (
@@ -40,7 +54,6 @@ function BottomNav(props) {
         borderTop: '1px solid rgba(0, 0, 0, 0.12)',
       }}
       onChange={handleChange}
-      
     >
         <CustomBottomNavigationAction label="ホーム" value={"home"} icon={<HomeIcon /> } />
       <CustomBottomNavigationAction label="バリアフリー" value={"accessibility"} icon={<AccessibleIcon />} />
