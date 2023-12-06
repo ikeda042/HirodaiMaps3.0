@@ -6,15 +6,15 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 
-function BuildingCard({ title, description, imageUrl, buildingId}) {
+function BuildingCard({ title, description, imageUrl, buildingId, QRID}) {
 
   return (
-    <Link to={`/building/${buildingId}`} style={{ textDecoration: 'none',color: 'inherit', fontFamily: 'Arial'}}>
-       <div style={{ margin: '0 1%' }}> {/* 左右のマージンを1%に設定 */}
+    <Link to={`/building/${buildingId}/?=${QRID}`} style={{ textDecoration: 'none',color: 'inherit', fontFamily: 'Arial'}}>
+       <div style={{ margin: '0 1%' }}> 
       <Card sx={{  width: '100%', 
   height: "90px", 
   display: 'flex', 
-  alignItems: 'center', // ここでアイテムを中央揃えに設定
+  alignItems: 'center',
   margin: '0.5% auto', 
   borderRadius: "10px" }}>
         <CardMedia
