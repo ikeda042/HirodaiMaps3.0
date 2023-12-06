@@ -9,8 +9,9 @@ import { useNavigate } from 'react-router-dom';
 function LandingPage(props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredBuildings, setFilteredBuildings] = useState([]);
-  const appBarHeight = '62px'; 
+  const appBarHeight = '55px'; 
   const searchBarHeight = '70px';
+  const navigate = useNavigate();
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
