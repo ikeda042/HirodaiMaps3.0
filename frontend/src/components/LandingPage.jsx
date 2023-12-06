@@ -55,7 +55,7 @@ function LandingPage(props) {
           />
         ))}
       <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 1000}}> {/* ここでBottomNavを固定 */}
-      <BottomNav />
+      <BottomNav QRID={checkpointID}/>
     </div>
     </div>
   </div>
