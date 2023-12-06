@@ -65,7 +65,7 @@ export default function ButtonAppBar(props) {
             Hirodai Maps 3.0 {props.headerText}
             </Link>
           </Typography>
-          <Button color="inherit" href='https://www.hiroshima-u.ac.jp/'>広島大学</Button>
+          <Button color="inherit">Checkpoint:{props.checkpointID}</Button>
         </Toolbar>
       </AppBar>
     </Box>

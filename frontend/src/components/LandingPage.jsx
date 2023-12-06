@@ -4,11 +4,20 @@ import BuildingCard from "./BuildingCard";
 import BottomNav from "./BottomNavigation ";
 import React, { useState, useEffect } from 'react';
 import buildings from './buildingsData';
+import { useNavigate } from 'react-router-dom';
 
 function LandingPage(props) {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredBuildings, setFilteredBuildings] = useState([]);
-  
+  const appBarHeight = '62px'; 
+  const searchBarHeight = '70px';
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+ 
+  const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
+  const QRID = getQridFromQueryParam("qrid");
+
   useEffect(() => {
     let filtered;
     if (searchQuery) {
@@ -22,18 +31,12 @@ function LandingPage(props) {
     }
     setFilteredBuildings(filtered);
   }, [searchQuery]); 
-
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-  };
-
-  const appBarHeight = '55px'; 
-  const searchBarHeight = '70px';
-
+  const checkpointID = QRID ? QRID : "0";
+  
   return (
     <div className="App">
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>
-        <ButtonAppBar headerText={props.headerText}/>
+        <ButtonAppBar headerText={props.headerText} checkpointID={checkpointID}/>
       </div>
       <div style={{ position: 'fixed', top: appBarHeight, left: 0, right: 0, zIndex: 99, backgroundColor: 'white', }}>
         <SearchBar onSearch={handleSearch} />
@@ -44,8 +47,9 @@ function LandingPage(props) {
             key={building.buildingId}
             buildingId={building.buildingId}
             title={building.title}
-            description={building.description}
+            description={building.description }
             imageUrl={building.imageUrl}
+            QRID={checkpointID}
           />
         ))}
       <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 1000}}> {/* ここでBottomNavを固定 */}
