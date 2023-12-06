@@ -13,7 +13,10 @@ import BottomNav from './BottomNavigation ';
 function BuildingDetail({ detailData }) {
   const { buildingId } = useParams();
   const buildingDetail = detailData.find((item) => item.buildingId === buildingId);;
-
+  //get value from url query parameter
+  const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
+  const QRID = getQridFromQueryParam("qrid");
+  const checkpointID = QRID ? QRID : "0";
   if (!buildingDetail) {
     return <div>詳細情報が見つかりません。</div>;
   }
@@ -37,7 +40,7 @@ function BuildingDetail({ detailData }) {
               {buildingDetail.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              This is {buildingDetail.title + "/map/map.html"+buildingDetail.mapCoordinate}
+              This is {buildingDetail.title + QRID + "/map/map.html"+buildingDetail.mapCoordinate}
             </Typography>
           </CardContent>
         </CardActionArea>

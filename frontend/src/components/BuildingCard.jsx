@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 function BuildingCard({ title, description, imageUrl, buildingId, QRID}) {
 
   return (
-    <Link to={`/building/${buildingId}/?=${QRID}`} style={{ textDecoration: 'none',color: 'inherit', fontFamily: 'Arial'}}>
+    <Link to={`/building/${buildingId}/?qrid=${QRID}`} style={{ textDecoration: 'none',color: 'inherit', fontFamily: 'Arial'}}>
        <div style={{ margin: '0 1%' }}> 
       <Card sx={{  width: '100%', 
   height: "90px", 
