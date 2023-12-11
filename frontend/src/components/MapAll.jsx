@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonAppBar from './Navbar';
-import BottomNav from './BottomNavigation ';
+import BottomNav from './BottomNavigation';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
