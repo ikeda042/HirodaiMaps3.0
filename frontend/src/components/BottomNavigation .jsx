@@ -8,9 +8,11 @@ import { styled } from '@mui/material/styles';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { Link } from 'react-router-dom';
 import AccessibleIcon from '@mui/icons-material/Accessible';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import DepartureBoardIcon from '@mui/icons-material/DepartureBoard';
 
 const CustomBottomNavigationAction = styled(BottomNavigationAction)((theme) => ({
   borderRight: '1px solid rgba(0, 0, 0, 0.12)',
@@ -55,9 +57,10 @@ function BottomNav(props) {
       }}
       onChange={handleChange}
     >
-        <CustomBottomNavigationAction label="ホーム" value={"home"} icon={<HomeIcon /> } />
+        {/* <CustomBottomNavigationAction label="ホーム" value={"home"} icon={<HomeIcon /> } /> */}
+        <CustomBottomNavigationAction label="交通機関" value={"search"} icon={<DepartureBoardIcon />} />
+        <CustomBottomNavigationAction label="現在地" value={"currLoc"} icon={<MyLocationIcon />}/>
       <CustomBottomNavigationAction label="バリアフリー" value={"accessibility"} icon={<AccessibleIcon />} />
-      <CustomBottomNavigationAction label="言語/Langage" value={"language"} icon={<TranslateIcon />}/>
     </BottomNavigation>
   );
 }

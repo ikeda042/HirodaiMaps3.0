@@ -10,6 +10,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
+
 export default function ButtonAppBar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -64,7 +65,7 @@ export default function ButtonAppBar(props) {
             HirodaiMaps{props.headerText}
             </Link>
           </Typography>
-          <Button color="inherit">Checkpoint:{props.checkpointID}</Button>
+          <Button color="inherit" href='/mapall'>Checkpoint:{props.checkpointID}</Button>
         </Toolbar>
       </AppBar>
     </Box>
