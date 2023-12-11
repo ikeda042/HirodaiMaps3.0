@@ -14,10 +14,8 @@ def resize_image_maintaining_aspect_ratio(image_path, max_size):
     return cv2.resize(image, (new_w, new_h))
 
 # 画像をリサイズする
-filename = "building5.png"
-thumbnail = resize_image_maintaining_aspect_ratio(filename, 200)  # 最大サイズを100に
+filename = "/Users/leeyunosuke/Desktop/HirodaiMaps3.0/frontend/public/building_images/building6.JPG"
+thumbnail = resize_image_maintaining_aspect_ratio(filename, 300)  
 
 # リサイズされた画像を保存する
-cv2.imwrite(f'{filename.split("/")[-1].split(".")[0]+"_thumbnail.png"}', thumbnail)
-
-
+cv2.imwrite(f'{filename.split("/")[-1].split(".")[0]+"_thumbnail.jpg"}', thumbnail)
