@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import BottomNav from './BottomNavigation ';
+import BottomNav from './BottomNavigation';
 
 function BuildingDetail({ detailData }) {
   const { buildingId } = useParams();
@@ -20,6 +20,9 @@ function BuildingDetail({ detailData }) {
   if (!buildingDetail) {
     return <div>詳細情報が見つかりません。</div>;
   }
+  const lat_query = buildingDetail.lat;
+  const lon_query = buildingDetail.lon;
+  const title = buildingDetail.title;
 
   return (
     <div>
@@ -47,8 +50,8 @@ function BuildingDetail({ detailData }) {
       </Card>
       <iframe
         id="mapIframe"
-        src={"/map/map.html"+buildingDetail.mapCoordinate}
-        style={{ height: '300px', width: '300px', border: '2px solid black', marginTop: '20px', marginBottom: '50px' }} // 枠とマージンを追加
+        src={"/map/map.html"+ `?lat=${lat_query}&lon=${lon_query}&title=${title}`}
+        style={{ height: '350px', width: '350px', border: '2px solid black', marginTop: '20px', marginBottom: '50px' }} // 枠とマージンを追加
         title="Map"
       ></iframe>
     </div>

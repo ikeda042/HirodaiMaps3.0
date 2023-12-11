@@ -16,8 +16,6 @@ const navigate = useNavigate();
   const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
   const QRID = getQridFromQueryParam("qrid");
   const checkpointID = QRID ? QRID : "0";
-
- 
   return (
     <div>
     <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000 }}>

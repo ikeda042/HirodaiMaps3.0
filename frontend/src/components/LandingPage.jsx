@@ -1,7 +1,7 @@
 import ButtonAppBar from "./Navbar";
 import SearchBar from "./Searchbar";
 import BuildingCard from "./BuildingCard";
-import BottomNav from "./BottomNavigation ";
+import BottomNav from "./BottomNavigation";
 import React, { useState, useEffect } from 'react';
 import buildings from './buildingsData';
 import { useNavigate } from 'react-router-dom';
