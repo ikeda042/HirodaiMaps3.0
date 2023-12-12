@@ -69,11 +69,11 @@ function addPoint(lat, lon, title) {
         icon: L.icon({
             iconUrl: '../placeholder.png', // 赤いピンの画像へのパス
             iconSize: [20, 20], // アイコンのサイズ
-            iconAnchor: [0, 0], // アイコンの「くい」となるポイントを中心に設定
-            popupAnchor: [0, -10] // ポップアップが開く位置を調整
+            iconAnchor: [10, 20] , // アイコンの「くい」となるポイントを中心に設定
+            popupAnchor: [0, -20] // ポップアップが開く位置を調整
         })
     }).addTo(map);
-    pointMarker.bindPopup(title ).openPopup();
+    pointMarker.bindPopup(title).openPopup();
     map.setView(pointLocation, map.getZoom());
 }
 
