@@ -15,7 +15,7 @@ import { useEffect } from 'react';
 import DepartureBoardIcon from '@mui/icons-material/DepartureBoard';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import BusinessIcon from '@mui/icons-material/Business';
-
+import checkpoints from './CheckpointData';
 
 const CustomBottomNavigationAction = styled(BottomNavigationAction)((theme) => ({
   borderRight: '1px solid rgba(0, 0, 0, 0.12)',
@@ -31,7 +31,8 @@ function MapalllNav(props) {
   const navigate = useNavigate();
   const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
   const QRID = getQridFromQueryParam("qrid");
-  
+  const QRID_lat = checkpoints.find((item) => item.checkpointId === QRID).lat;
+  const QRID_lon = checkpoints.find((item) => item.checkpointId === QRID).lon;
 
   
   const handleChange = (event, newValue) => {
@@ -53,10 +54,10 @@ function MapalllNav(props) {
         <CustomBottomNavigationAction component={Link} 
         to={"/?qrid="+props.qrid} label="建物リスト" value={"search"} icon={<BusinessIcon />} />
      <CustomBottomNavigationAction component={Link} 
-        to={`/mapall?lat=${props.lat}&lon=${props.lon}&qrid=${props.qrid}`} label="現在地" value={"currLoc"} icon={<MyLocationIcon />}/>
+        to={`/mapall?lat=${QRID_lat}&lon=${QRID_lon}&qrid=${props.qrid}`} label="現在地" value={"currLoc"} icon={<MyLocationIcon />}/>
       {/* <CustomBottomNavigationAction label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} /> */}
       <CustomBottomNavigationAction component={Link} 
-        to={`/mapall?lat=${props.lat}&lon=${props.lon}&qrid=${props.qrid}`} label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} />
+        to={`/mapall?lat=${props.lat}&lon=${QRID_lat}&qrid=${QRID_lon}`} label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} />
     </BottomNavigation>
   );
 }
