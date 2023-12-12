@@ -4,7 +4,8 @@ import BottomNav from './BottomNavigation';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
+import MapalllNav
+ from './MapallNav';
 function MapAll({ props }) {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -28,7 +29,6 @@ function MapAll({ props }) {
     const queryParams = new URLSearchParams(location.search);
     const lat = queryParams.get('lat');
     const lon = queryParams.get('lon');
-
     return (
         <Link>
             <div>
@@ -37,7 +37,7 @@ function MapAll({ props }) {
                 </div>
                 <iframe
                     id="mapIframe"
-                    src={"/map/map_large.html#14/" + lat + "/" + lon + "/&title=現在地"}
+                    src={"/map/map_large.html?lat=" + lat + "&lon=" + lon + "&title=現在地"}
                     style={{
                         height: '600px',
                         width: `${windowWidth}px`, // ここでウィンドウの幅に基づいて幅を設定
@@ -47,7 +47,7 @@ function MapAll({ props }) {
                     }}
                     title="Map"
                 ></iframe>
-                <BottomNav />
+                <MapalllNav qrid = {QRID}/>
             </div>
         </Link>
     );
