@@ -59,7 +59,8 @@ function BottomNav(props) {
     >
         {/* <CustomBottomNavigationAction label="ホーム" value={"home"} icon={<HomeIcon /> } /> */}
         <CustomBottomNavigationAction label="交通機関" value={"search"} icon={<DepartureBoardIcon />} />
-        <CustomBottomNavigationAction label="現在地" value={"currLoc"} icon={<MyLocationIcon />}/>
+        <CustomBottomNavigationAction component={Link} 
+        to={"/mapall" + `?lat=${props.lat}&lon=${props.lon}&title=${props.title}`} label="現在地" value={"currLoc"} icon={<MyLocationIcon />}/>
       <CustomBottomNavigationAction label="バリアフリー" value={"accessibility"} icon={<AccessibleIcon />} />
     </BottomNavigation>
   );
