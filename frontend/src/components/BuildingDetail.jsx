@@ -55,7 +55,7 @@ function BuildingDetail({ detailData }) {
       <iframe
         id="mapIframe"
         src={"/map/map.html"+ `?lat=${lat_query}&lon=${lon_query}&title=${title}`}
-        style={{ height: '350px', width: '350px', border: '2px solid black', marginTop: '20px', marginBottom: '90px' }} // 枠とマージンを追加
+        style={{ height: '350px', width: '350px', border: '2px solid black', marginTop: '20px', marginBottom: '90px' }} 
         title="Map"
       ></iframe>
     </div>
