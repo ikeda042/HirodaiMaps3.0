@@ -39,19 +39,19 @@ function Route({props}) {
                 </div>
                 <iframe
                     id="mapIframe"
-                    src={"/map_routes/"+ checkpointID + "to" + buildingId+"/route.html?lat=" +lat + "&lon=" + lon + "&title=" + title}
+                    src={"/map_routes/"+ checkpointID + "to" + buildingId+"/route.html?"+ "qrid="+QRID+"&lat=" +lat + "&lon=" + lon + "&title=" + title}
                     style={{
                         height: '600px',
                         width: `${windowWidth}px`, // ここでウィンドウの幅に基づいて幅を設定
                         border: '2px solid black',
-                        marginTop: '61px',
-                        marginBottom: '90px',
-                        marginLeft: '2px',
+                        marginTop: '121px',
+                        marginBottom: '-40px',
+                        marginLeft: '0px',
                         marginRight: '-10px'
                     }}
                     title="Map"
                 ></iframe>
-                <MapalllNav qrid = {QRID}/>
+                <MapalllNav lat = {lat} lon = {lon} qrid = {QRID} />
             </div>
         </Link>
     );

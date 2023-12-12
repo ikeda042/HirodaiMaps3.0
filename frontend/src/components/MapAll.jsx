@@ -42,7 +42,7 @@ function MapAll({ props }) {
                         height: '600px',
                         width: `${windowWidth-8}px`, 
                         border: '2px solid black',
-                        marginTop: '61px',
+                        marginTop: '121px',
                         marginBottom: '90px',
                         marginLeft: '2px',
                         marginRight: '-10px'
