@@ -3,11 +3,12 @@ import ButtonAppBar from './Navbar';
 import BottomNav from './BottomNavigation';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
+import { useLocation } from 'react-router-dom';
 
 function MapAll({ props }) {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const location = useLocation(); 
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -22,7 +23,11 @@ function MapAll({ props }) {
 
     const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
     const QRID = getQridFromQueryParam("qrid");
+
     const checkpointID = QRID ? QRID : "0";
+    const queryParams = new URLSearchParams(location.search);
+    const lat = queryParams.get('lat');
+    const lon = queryParams.get('lon');
 
     return (
         <Link>
@@ -32,7 +37,7 @@ function MapAll({ props }) {
                 </div>
                 <iframe
                     id="mapIframe"
-                    src={"/map/map.html#16/34.4012/132.7153"}
+                    src={"/map/map_large.html#14/" + lat + "/" + lon + "/&title=現在地"}
                     style={{
                         height: '600px',
                         width: `${windowWidth}px`, // ここでウィンドウの幅に基づいて幅を設定
