@@ -29,6 +29,9 @@ const CustomBottomNavigationAction = styled(BottomNavigationAction)((theme) => (
 function MapalllNav(props) {
   const [value, setValue] = useState("Home");
   const navigate = useNavigate();
+    const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
+    const QRID = getQridFromQueryParam("qrid");
+
   
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -49,8 +52,10 @@ function MapalllNav(props) {
         <CustomBottomNavigationAction component={Link} 
         to={"/?qrid="+props.qrid} label="建物リスト" value={"search"} icon={<BusinessIcon />} />
      <CustomBottomNavigationAction component={Link} 
-        to={"/mapall"} label="現在地" value={"currLoc"} icon={<MyLocationIcon />}/>
-      <CustomBottomNavigationAction label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} />
+        to={`/mapall?lat=${props.lat}&lon=${props.lon}&qrid=${props.qrid}`} label="現在地" value={"currLoc"} icon={<MyLocationIcon />}/>
+      {/* <CustomBottomNavigationAction label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} /> */}
+      <CustomBottomNavigationAction component={Link} 
+        to={`/mapall?lat=${props.lat}&lon=${props.lon}&qrid=${props.qrid}`} label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} />
     </BottomNavigation>
   );
 }

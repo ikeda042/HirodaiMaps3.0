@@ -2,7 +2,6 @@
 const buildings = [
   { 'buildingId': '2', 'title': '中央図書館', 'description': '広島大学の中央図書館です。', 'imageUrl': 'building_images/building2.jpg', 'keywords': ['中央図書館', '図書館', '図書', "Library", "Central"], 'tag': 'faculty', 'mapCoordinate': '#17/34.403814/132.715201', 'lat': '34.40320', 'lon': '132.71345' },
 
-
   { 'buildingId': '4', 'title': '学生プラザ', 'description': '学生プラザの説明。', 'imageUrl': 'building_images/building4.jpg', 'keywords': ['学生プラザ', '留学', "奨学金", "学プラ"], 'tag': 'faculty', 'mapCoordinate': '#17/34.403814/132.715201', 'lat': '34.40088', 'lon': '132.71119' },
 
   { 'buildingId': '5', 'title': '教育学部講義棟L', 'description': '教育学部の講義棟L', 'imageUrl': 'building_images/building5.jpg', 'keywords': ["教育学部", "講義棟L", "講義等L", "こうぎとうL"], 'tag': 'faculty', 'mapCoordinate': '#17/34.403814/132.715201','lat': '34.40329205', 'lon': '132.7106335'  },

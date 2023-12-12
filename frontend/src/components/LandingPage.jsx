@@ -60,7 +60,7 @@ function LandingPage(props) {
           />
         ))}
       <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 1000}}> {/* ここでBottomNavを固定 */}
-      <BottomNav QRID={checkpointID} lat = {lat_query} lon = {lon_query} title = {"title"}/>
+      <BottomNav QRID={checkpointID} lat = {lat_query} lon = {lon_query} title = {checkpointID}/>
     </div>
     </div>
   </div>
