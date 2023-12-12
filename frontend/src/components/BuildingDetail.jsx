@@ -7,8 +7,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Button} from '@mui/material';
 import BottomNav from './BottomNavigation';
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
+import NavigationIcon from '@mui/icons-material/Navigation';
+import AccessibleIcon from '@mui/icons-material/Accessible';
+import BottomNavDetailPage from './ButtomNavDetailPage';
 
 function BuildingDetail({ detailData }) {
   const { buildingId } = useParams();
@@ -30,7 +34,7 @@ function BuildingDetail({ detailData }) {
       <ButtonAppBar headerText={detailData.headerText} checkpointID={checkpointID}/>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '17%' }}>
-        <Card sx={{ maxWidth: 345, maxHeight: 400 }}> {/* maxHeightを追加 */}
+        <Card sx={{ maxWidth: 350, maxHeight: 290 }}> {/* maxHeightを追加 */}
           <CardActionArea>
             <CardMedia
               component="img"
@@ -43,7 +47,7 @@ function BuildingDetail({ detailData }) {
                 {buildingDetail.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                This is {buildingDetail.title}
+                {buildingDetail.title + buildingDetail.buildingId}の説明。
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -55,9 +59,28 @@ function BuildingDetail({ detailData }) {
         title="Map"
       ></iframe>
     </div>
-    {/* <BottomNav /> */}
+    <BottomNavDetailPage />
   </div>
   );
 }
 
 export default BuildingDetail;
+
+
+
+// <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '20px', marginTop:'-30px' }}>
+// <Button 
+//   variant="contained" 
+//   endIcon={<DirectionsWalkIcon />}
+//   style={{ backgroundColor: 'orange', margin: '0 10px' }}> {/* マージンを追加 */}
+//   経路案内
+// </Button>
+// <Button 
+//   variant="contained" 
+//   endIcon={<AccessibleIcon />}
+//   style={{ backgroundColor: '#0091E4', margin: '0 10px' }
+//   }> {/* マージンを追加 */}
+
+//   バリアフリー経路案内
+// </Button>
+// </div>
