@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
-            width: 500px;
-            height: 600px;
+            width: 380px;
+            height: 550px;
         }
         </style>
         <title></title>
@@ -50,13 +50,14 @@ const urlParams = new URLSearchParams(window.location.search);
 const lat_query = urlParams.get('lat');
 const lon_query = urlParams.get('lon');
 const title_query = urlParams.get('title');
+const qrid_query = urlParams.get('qrid');
 
 // マップの初期化
 var map = L.map('map', {
     zoomControl: true, 
     maxZoom: 28, 
     minZoom: 1
-}).setView([34.4007,132.71415 ], 15.5); // ここで lat と lon を正しく設定
+}).setView([34.5007,132.71415 ], 16); // ここで lat と lon を正しく設定
 
 function addPoint(lat, lon, title) {
     var pointLocation = L.latLng(lat, lon);
@@ -66,7 +67,7 @@ function addPoint(lat, lon, title) {
     pointMarker = L.marker(pointLocation, {
         icon: L.icon({
             iconUrl: '../placeholder.png', // 赤いピンの画像へのパス
-            iconSize: [20, 20], // アイコンのサイズ
+            iconSize: [30, 30], // アイコンのサイズ
             iconAnchor: [10, 20], // アイコンの「くい」となるポイントを中心に設定
             popupAnchor: [0, -25] // ポップアップが開く位置を調整
         })
@@ -76,7 +77,7 @@ function addPoint(lat, lon, title) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    if (title_query != 'root'){
+    if (qrid_query != "0"){
         addPoint(parseFloat(lat_query), parseFloat(lon_query), title_query);
     }
 });
