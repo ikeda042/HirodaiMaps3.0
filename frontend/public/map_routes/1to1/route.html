@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
-            width: 1014px;
-            height: 639px;
+            width: 380px;
+            height: 550px;
         }
         </style>
         <title></title>
@@ -38,9 +38,59 @@
         <script src="data/HiroshimaUniversityBicycleParking_7.js"></script>
         <script src="data/routetoHUmonument_8.js"></script>
         <script>
+        // var map = L.map('map', {
+        //     zoomControl:true, maxZoom:28, minZoom:1
+        // }).fitBounds([[34.396980025322,132.70666439903198],[34.40650215342098,132.72179217554088]]);
+        var pointMarker; 
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const lat_query = urlParams.get('lat');
+        const lon_query = urlParams.get('lon');
+        const title_query = urlParams.get('title');
+        const qrid_query = urlParams.get('qrid');
+
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[34.396980025322,132.70666439903198],[34.40650215342098,132.72179217554088]]);
+            zoomControl: true, 
+            maxZoom: 28, 
+            minZoom: 1
+        }).setView([parseFloat(lat_query),parseFloat(lon_query) ], 17); 
+
+        function addPoint(lat, lon, title) {
+            var pointLocation = L.latLng(lat, lon);
+            if (pointMarker) {
+                map.removeLayer(pointMarker); 
+            }
+            pointMarker = L.marker(pointLocation, {
+                icon: L.icon({
+                    iconUrl: '../../placeholder.png', // 赤いピンの画像へのパス
+                    iconSize: [20, 20], // アイコンのサイズ
+                    iconAnchor: [10, 20], // アイコンの「くい」となるポイントを中心に設定
+                    popupAnchor: [0, -25] // ポップアップが開く位置を調整
+                })
+            }).addTo(map);
+            // pointMarker.bindPopup(title ).openPopup();
+            map.setView(pointLocation, map.getZoom());
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+            if (qrid_query != "0"){
+                addPoint(parseFloat(lat_query), parseFloat(lon_query), title_query);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});

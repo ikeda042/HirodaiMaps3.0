@@ -40,13 +40,12 @@ function MapAll({ props }) {
                     src={"/map/map_large.html?lat=" + lat + "&lon=" + lon + "&title=" + "現在地"}
                     style={{
                         height: '600px',
-                        width: `${windowWidth-8}px`, // ここでウィンドウの幅に基づいて幅を設定
+                        width: `${windowWidth-8}px`, 
                         border: '2px solid black',
                         marginTop: '61px',
                         marginBottom: '90px',
                         marginLeft: '2px',
                         marginRight: '-10px'
-
                     }}
                     title="Map"
                 ></iframe>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ButtonAppBar from './Navbar';
 import MapalllNav from './MapallNav';
+import buildings from './buildingsData';
 
 function Route({props}) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -25,8 +26,11 @@ function Route({props}) {
 
     const checkpointID = QRID ? QRID : "0";
     const queryParams = new URLSearchParams(location.search);
-    var lat = queryParams.get('lat');
-    var lon = queryParams.get('lon');
+
+    const buildingId = queryParams.get('buildingId');
+    const lat = buildings.find((item) => item.buildingId === buildingId).lat;
+    const lon = buildings.find((item) => item.buildingId === buildingId).lon;
+    const title = buildings.find((item) => item.buildingId === buildingId).title;
     return (
         <Link>
             <div>
@@ -35,13 +39,15 @@ function Route({props}) {
                 </div>
                 <iframe
                     id="mapIframe"
-                    src={"/map/map_large.html?lat=" + lat + "&lon=" + lon + "&title=" + "現在地"}
+                    src={"/map_routes/"+ checkpointID + "to" + buildingId+"/route.html?lat=" +lat + "&lon=" + lon + "&title=" + title}
                     style={{
                         height: '600px',
                         width: `${windowWidth}px`, // ここでウィンドウの幅に基づいて幅を設定
                         border: '2px solid black',
-                        marginTop: '60px',
-                        marginBottom: '90px'
+                        marginTop: '61px',
+                        marginBottom: '90px',
+                        marginLeft: '2px',
+                        marginRight: '-10px'
                     }}
                     title="Map"
                 ></iframe>

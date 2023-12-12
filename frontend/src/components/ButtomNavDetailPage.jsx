@@ -29,7 +29,7 @@ const CustomBottomNavigationAction = styled(BottomNavigationAction)((theme) => (
 function BottomNavDetail(props) {
   const [value, setValue] = useState("Home");
   const navigate = useNavigate();
-  
+  const buildingId = props.buildingId;
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -49,7 +49,8 @@ function BottomNavDetail(props) {
         {/* <CustomBottomNavigationAction label="ホーム" value={"home"} icon={<HomeIcon /> } /> */}
         <CustomBottomNavigationAction component={Link} 
         to={"/route/?qrid="+props.qrid} label="建物リスト" value={"search"} icon={<BusinessIcon />} />
-        <CustomBottomNavigationAction label="経路案内を開始" value={"currLoc"} icon={<DirectionsIcon />}/>
+        <CustomBottomNavigationAction component={Link} 
+        to={"/route/?qrid="+props.qrid + "&buildingId=" + buildingId}label="経路案内を開始" value={"currLoc"} icon={<DirectionsIcon />}/>
       <CustomBottomNavigationAction label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} />
     </BottomNavigation>
   );

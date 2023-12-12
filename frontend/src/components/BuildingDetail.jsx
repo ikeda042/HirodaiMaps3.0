@@ -59,7 +59,7 @@ function BuildingDetail({ detailData }) {
         title="Map"
       ></iframe>
     </div>
-    <BottomNavDetailPage qrid = {QRID}/>
+    <BottomNavDetailPage qrid = {QRID} buildingId = {buildingDetail.buildingId}/>
   </div>
   );
 }
