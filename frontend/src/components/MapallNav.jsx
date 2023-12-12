@@ -29,8 +29,9 @@ const CustomBottomNavigationAction = styled(BottomNavigationAction)((theme) => (
 function MapalllNav(props) {
   const [value, setValue] = useState("Home");
   const navigate = useNavigate();
-    const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
-    const QRID = getQridFromQueryParam("qrid");
+  const getQridFromQueryParam = param => new URLSearchParams(window.location.search).get(param);
+  const QRID = getQridFromQueryParam("qrid");
+  
 
   
   const handleChange = (event, newValue) => {
