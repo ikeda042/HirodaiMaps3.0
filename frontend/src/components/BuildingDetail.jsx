@@ -30,24 +30,24 @@ function BuildingDetail({ detailData }) {
       <ButtonAppBar headerText={detailData.headerText} checkpointID={checkpointID}/>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '17%' }}>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image={`/${buildingDetail.imageUrl}?w=200&h=200&fit=crop&auto=format`}
-            alt={buildingDetail.title}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {buildingDetail.title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              This is {buildingDetail.title + QRID + "/map/map.html"+buildingDetail.mapCoordinate}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+        <Card sx={{ maxWidth: 345, maxHeight: 400 }}> {/* maxHeightを追加 */}
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="200" 
+              image={`/${buildingDetail.imageUrl}?w=200&h=200&fit=crop&auto=format`}
+              alt={buildingDetail.title}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {buildingDetail.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                This is {buildingDetail.title}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
       <iframe
         id="mapIframe"
         src={"/map/map.html"+ `?lat=${lat_query}&lon=${lon_query}&title=${title}`}
