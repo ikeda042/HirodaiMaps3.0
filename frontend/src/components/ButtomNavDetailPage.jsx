@@ -47,7 +47,8 @@ function BottomNavDetail(props) {
       onChange={handleChange}
     >
         {/* <CustomBottomNavigationAction label="ホーム" value={"home"} icon={<HomeIcon /> } /> */}
-        <CustomBottomNavigationAction label="建物リスト" value={"search"} icon={<BusinessIcon />} />
+        <CustomBottomNavigationAction component={Link} 
+        to={"/?qrid="+props.qrid} label="建物リスト" value={"search"} icon={<BusinessIcon />} />
         <CustomBottomNavigationAction label="経路案内を開始" value={"currLoc"} icon={<DirectionsIcon />}/>
       <CustomBottomNavigationAction label="バリアフリー経路" value={"accessibility"} icon={<AccessibleIcon />} />
     </BottomNavigation>
