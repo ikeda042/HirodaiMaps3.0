@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
-            width: 300px;
-            height: 300px;
+            width: 500px;
+            height: 600px;
         }
         </style>
         <title></title>
@@ -45,20 +45,20 @@
 //------------------------------------------------------------------------>
 //ピンをうつ処理
 // var pointMarker; 
-// const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
 
-// const lat_query = urlParams.get('lat');
-// const lon_query = urlParams.get('lon');
-// const title_query = urlParams.get('title');
-// console.log(lat_query);
-// console.log(lon_query);
+const lat_query = urlParams.get('lat');
+const lon_query = urlParams.get('lon');
+const title_query = urlParams.get('title');
+console.log(lat_query);
+console.log(lon_query);
 
 // マップの初期化
 var map = L.map('map', {
     zoomControl: true, 
     maxZoom: 28, 
     minZoom: 1
-}).setView([34.403814,132.715201 ], 20); // ここで lat と lon を正しく設定
+}).setView([34.4007,132.71415 ], 15.5); // ここで lat と lon を正しく設定
 
 function addPoint(lat, lon, title) {
     var pointLocation = L.latLng(lat, lon);
@@ -76,6 +76,12 @@ function addPoint(lat, lon, title) {
     pointMarker.bindPopup(title ).openPopup();
     map.setView(pointLocation, map.getZoom());
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (title_query != 'root'){
+        addPoint(parseFloat(lat_query), parseFloat(lon_query), title_query);
+    }
+});
 //------------------------------------------------------------------------>
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
