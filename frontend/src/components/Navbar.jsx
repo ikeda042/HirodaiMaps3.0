@@ -9,8 +9,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-
-
+import AssistantDirectionIcon from '@mui/icons-material/AssistantDirection';
+import PinDropIcon from '@mui/icons-material/PinDrop';
+import QrCodeIcon from '@mui/icons-material/QrCode';
 export default function ButtonAppBar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -59,9 +60,11 @@ export default function ButtonAppBar(props) {
             <MenuItem onClick={handleClose}>研究室</MenuItem>
             <MenuItem onClick={handleClose}>お知らせ</MenuItem>
           </Menu>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to={`/?qrid=${props.checkpointID}`} style={{ textDecoration: 'none',color: 'inherit', fontFamily: 'Arial'}}>
-            HirodaiMaps{props.headerText}
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', fontFamily:  "Helvetica" , fontSize: '1.7rem' }}>
+            <Link to={`/?qrid=${props.checkpointID}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+              HirodaiMaps{props.headerText}
+              {/* <PinDropIcon sx={{ ml: 0.4, position: 'relative', top: '0.18em' , fontSize: '1.1em'}}/> */}
+              <QrCodeIcon sx={{ ml: 0.4, position: 'relative', top: '0.21em' , fontSize: '1.1em'}}/>
             </Link>
           </Typography>
           {/* <Button color="inherit" href='/mapall'>Checkpoint:{props.checkpointID}</Button> */}
