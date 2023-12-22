@@ -26,16 +26,7 @@ export default function ButtonAppBar(props) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: '#005e3c' }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={handleMenu}
-          >
-            <MenuIcon />
-          </IconButton>
+        
           <Menu
             id="menu-appbar"
             anchorEl={anchorEl}
