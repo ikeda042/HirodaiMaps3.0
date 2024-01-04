@@ -47,7 +47,7 @@ function BuildingDetail({ detailData }) {
                 {buildingDetail.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {buildingDetail.title + buildingDetail.buildingId}の説明。
+                {buildingDetail.title + buildingDetail.buildingId}。
               </Typography>
             </CardContent>
           </CardActionArea>

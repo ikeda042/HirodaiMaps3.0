@@ -22,6 +22,8 @@ const buildings = [
   { 'buildingId': '8', 'title': '先端物質科学研究科', 'description': '中央図書館前の広島大学モニュメントです。', 'imageUrl': 'building_images/building8.jpg', 'keywords': ["先端物質科学研究科","先端件","せんたんけん"], 'tag': 'faculty', 'mapCoordinate': '#17/34.403814/132.715201' ,'lat': '34.4051457', 'lon': '132.7162162' },
 
 
+  { 'buildingId': '101', 'title': '中央口の交差点', 'description': '中央口入ってすぐの交差点。', 'imageUrl': 'building_images/building101.jpg', 'keywords': ["先端物質科学研究科","先端件","せんたんけん","交差点"], 'tag': 'faculty', 'mapCoordinate': '#17/34.403814/132.725201' ,'lat': '34.4046857', 'lon': '132.7145562' },
+
   //34.40320/132.71345
 ];
 
