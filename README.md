@@ -47,9 +47,9 @@ npm start
 { 
 'buildingId': '2', 
     'title': '中央図書館', 
-    'description': '広島大学の中央図書館です。', 'imageUrl': 'building_images/building2.jpg', 
-    'keywords': ['中央図書館', '図書館', '図書', "Library", 
-    "Central"], 
+    'description': '広島大学の中央図書館です。', 
+    'imageUrl': 'building_images/building2.jpg', 
+    'keywords': ['中央図書館', '図書館', '図書', "Library", "Central"], 
     'tag': 'faculty', 
     'mapCoordinate': '#17/34.403814/132.715201', 'lat': '34.40320', 
     'lon': '132.71345' 
