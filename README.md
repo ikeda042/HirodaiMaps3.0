@@ -46,7 +46,7 @@ npm start
 ```json
 { 'buildingId': '2', 'title': '中央図書館', 'description': '広島大学の中央図書館です。', 'imageUrl': 'building_images/building2.jpg', 'keywords': ['中央図書館', '図書館', '図書', "Library", "Central"], 'tag': 'faculty', 'mapCoordinate': '#17/34.403814/132.715201', 'lat': '34.40320', 'lon': '132.71345' }
 ```
-上記のようなデータをconst buildingsの最後に追加すると、建物がトップページのリストに追加される。
+上記のようなデータを`const buildings`の最後に追加すると、建物がトップページのリストに追加される。
 
 
 
