@@ -43,8 +43,17 @@ npm start
 |lon| str    | 値を増やすと地図上では右に赤いピンが移動|
 
 図書館の例
-```json
-{ 'buildingId': '2', 'title': '中央図書館', 'description': '広島大学の中央図書館です。', 'imageUrl': 'building_images/building2.jpg', 'keywords': ['中央図書館', '図書館', '図書', "Library", "Central"], 'tag': 'faculty', 'mapCoordinate': '#17/34.403814/132.715201', 'lat': '34.40320', 'lon': '132.71345' }
+```python
+{ 
+'buildingId': '2', 
+    'title': '中央図書館', 
+    'description': '広島大学の中央図書館です。', 'imageUrl': 'building_images/building2.jpg', 
+    'keywords': ['中央図書館', '図書館', '図書', "Library", 
+    "Central"], 
+    'tag': 'faculty', 
+    'mapCoordinate': '#17/34.403814/132.715201', 'lat': '34.40320', 
+    'lon': '132.71345' 
+}
 ```
 上記のようなデータを`const buildings`の最後に追加すると、建物がトップページのリストに追加される。
 
