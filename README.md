@@ -51,7 +51,8 @@ npm start
     'imageUrl': 'building_images/building2.jpg', 
     'keywords': ['中央図書館', '図書館', '図書', "Library", "Central"], 
     'tag': 'faculty', 
-    'mapCoordinate': '#17/34.403814/132.715201', 'lat': '34.40320', 
+    'mapCoordinate': '#17/34.403814/132.715201', 
+    'lat': '34.40320', 
     'lon': '132.71345' 
 }
 ```
